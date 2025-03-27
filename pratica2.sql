@@ -1,0 +1,6 @@
+-- Questao 1
+
+-- Questao 2
+-- a)
+CREATE USER user1 WITH PASSWORD '12345'
+GRANT INSERT, SELECT,  
