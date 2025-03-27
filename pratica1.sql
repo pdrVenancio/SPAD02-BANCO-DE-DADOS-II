@@ -7,3 +7,6 @@ CREATE ROLE gerente
 
 -- Questao 3.A)
 CREATE USER pedro WITH PASSWORD '1234'
+
+
+-- teste
