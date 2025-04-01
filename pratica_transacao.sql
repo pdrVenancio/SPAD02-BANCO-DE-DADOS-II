@@ -1,0 +1,18 @@
+--Questão 1: Crie uma transação que permita cancelar um pedido de um cliente. O
+--cancelamento deve excluir os itens do pedido da tabela order_details e depois remover
+--o pedido da tabela orders.
+--
+--Questão 2 : Crie uma transação que aumente o salário de todos os funcionários de um
+--determinado país na tabela employees.
+--
+--Questão 3 : Um gerente de vendas decidiu reajustar os preços dos produtos de uma
+--determinada categoria em 10%. Além disso, os pedidos que contêm esses produtos e
+--foram realizados a partir de uma data específica também devem refletir esse novo
+--preço. Implemente uma transação que:
+--    • Atualize os preços dos produtos de uma categoria específica, aumentando-os em
+--    10%.
+--    • Atualize os preços dos itens nos pedidos que contêm esses produtos, mas apenas
+--    para pedidos realizados a partir de uma data informada.
+--
+--QUESTÃO DESAFIO: Crie uma transação que registre uma venda e atualize os estoques.
+--Se um produto não tiver estoque suficiente, a transação deve ser revertida.
