@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 18/09/2015 14:58:06 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Mapeamento.Funcionario" table="funcionario" schema="empresa" optimistic-lock="version">
+        <id name="cpf" type="string">
+            <column name="cpf" length="11" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cargo" class="Mapeamento.Cargo" fetch="select">
+            <column name="cargo" not-null="true" />
+        </many-to-one>
+        <property name="nome" type="string">
+            <column name="nome" length="30" not-null="true" unique="true" />
+        </property>
+        <property name="endereco" type="string">
+            <column name="endereco" length="30" not-null="true" />
+        </property>
+        <property name="telefone" type="string">
+            <column name="telefone" length="10" not-null="true" />
+        </property>
+        <set name="dependenteses" table="dependentes" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="cpffuncionario" length="11" not-null="true" />
+            </key>
+            <one-to-many class="Mapeamento.Dependentes" />
+        </set>
+        <set name="salarios" table="salario" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="func" length="11" not-null="true" />
+            </key>
+            <one-to-many class="Mapeamento.Salario" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 18/09/2015 14:58:06 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Mapeamento.Salario" table="salario" schema="empresa" optimistic-lock="version">
+        <composite-id name="id" class="Mapeamento.SalarioId">
+            <key-property name="data" type="date">
+                <column name="data" length="13" />
+            </key-property>
+            <key-property name="func" type="string">
+                <column name="func" length="11" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="funcionario" class="Mapeamento.Funcionario" update="false" insert="false" fetch="select">
+            <column name="func" length="11" not-null="true" />
+        </many-to-one>
+        <property name="valor" type="big_decimal">
+            <column name="valor" precision="5" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

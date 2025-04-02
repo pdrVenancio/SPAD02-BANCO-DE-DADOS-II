@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 18/09/2015 14:58:06 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Mapeamento.Cargo" table="cargo" schema="empresa" optimistic-lock="version">
+        <id name="cod" type="int">
+            <column name="cod" />
+            <generator class="assigned" />
+        </id>
+        <property name="nome" type="string">
+            <column name="nome" length="30" not-null="true" unique="true" />
+        </property>
+        <property name="salariobase" type="big_decimal">
+            <column name="salariobase" precision="5" not-null="true" />
+        </property>
+        <property name="quantfunc" type="int">
+            <column name="quantfunc" not-null="true" />
+        </property>
+        <set name="funcionarios" table="funcionario" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="cargo" not-null="true" />
+            </key>
+            <one-to-many class="Mapeamento.Funcionario" />
+        </set>
+    </class>
+</hibernate-mapping>
