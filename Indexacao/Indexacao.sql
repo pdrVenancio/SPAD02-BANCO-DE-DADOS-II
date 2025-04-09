@@ -22,9 +22,11 @@
         SELECT * FROM departamento;
 
     -- b)	Qual o nome físico de cada registro?
+        -- ctid traz a tupla (bloco, posicao no bloco) cada bloco pode ter até 157 registros
         SELECT ctid, numerodepto, nomedepto FROM departamento;
 
     -- c)	Delete todos os registros da tabela departamento. Qual foi o efeito no arquivo físico? 
+        -- ctid traz a tupla (bloco, posicao no bloco) cada bloco pode ter até 157 registros
         SELECT ctid, * FROM northwind.order_details;
         
     -- d)	Reinsira os registros em nova ordem (2, 1, 4, 3).
@@ -38,4 +40,5 @@
 
     -- f)	Repita o comando da letra b na tabela order_details do banco northwind.
         SELECT * FROM departamento;
+        -- ctid traz a tupla (bloco, posicao no bloco) cada bloco pode ter até 157 registros
         SELECT ctid, numerodepto, nomedepto FROM departamento;
