@@ -1,3 +1,6 @@
+-- Nome: Pedro Venâncio dos Santos
+-- Matricula: 2023010066
+
 -- Questão 1: Considere o modelo abaixo.
 --     a) Implemente o modelo no banco de dados PostgreSQL, considerando os
 --     conceitos de banco objeto-relacional.
@@ -88,6 +91,7 @@
 
 --     c) Implemente a função realizaFinanciamento para o veículo de passeio e para o
 --     veículo de carga, utilizando o conceito de polimorfismo.
+        
         -- Para Passageiro
         CREATE OR REPLACE FUNCTION realizaFinanciamento(v Passageiro)
         RETURNS TEXT AS $$
